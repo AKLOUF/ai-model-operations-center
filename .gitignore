@@ -89,3 +89,12 @@ reports/drift/*.json
 # Python cache
 __pycache__/
 *.py[cod]
+
+
+# Local corporate Docker configuration
+Dockerfile.corporate
+
+# Local corporate certificates
+certificates/*
+!certificates/.gitkeep
+
