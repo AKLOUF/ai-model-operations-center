@@ -1,0 +1,15 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-model-operations-center:latest
+    container_name: ai-model-operations-center
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models/production:/app/models/production:ro
+      - ./data/raw:/app/data/raw:ro
+      - ./data/monitoring:/app/data/monitoring
+      - ./reports/drift:/app/reports/drift
+    restart: unless-stopped
