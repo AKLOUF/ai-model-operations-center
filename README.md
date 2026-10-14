@@ -4,7 +4,6 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)](#testing)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An end-to-end MLOps platform for generating and validating data, training multiple machine learning candidates, selecting and promoting a champion model, serving predictions through FastAPI, and monitoring production behavior through drift detection and automated alerts.
 
