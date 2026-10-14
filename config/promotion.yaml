@@ -1,0 +1,19 @@
+promotion:
+  champion_file: "reports/evaluation/candidates/champion.json"
+
+  test_data:
+    features_file: "data/processed/X_test.csv"
+    target_file: "data/processed/y_test.csv"
+    target_column: "quality_label"
+
+  source:
+    candidates_directory: "models/candidates"
+    preprocessor_file: "models/preprocessing/preprocessor.joblib"
+
+  evaluation:
+    minimum_f1_macro: 0.80
+    minimum_poor_recall: 0.85
+
+  output:
+    production_directory: "models/production"
+    evaluation_directory: "reports/evaluation/production"

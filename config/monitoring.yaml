@@ -1,0 +1,19 @@
+monitoring:
+  prediction_log_directory: "data/monitoring"
+
+  drift:
+    reference_dataset_path: "data/raw/dataset_quality.csv"
+    minimum_production_records: 30
+    warning_threshold: 0.10
+    drift_threshold: 0.25
+    bin_count: 10
+    report_directory: "reports/drift"
+
+  alerts:
+    warning_failure_rate: 0.05
+    critical_failure_rate: 0.15
+    warning_minimum_confidence: 0.70
+    critical_minimum_confidence: 0.50
+    warning_latency_seconds: 0.20
+    critical_latency_seconds: 1.00
+    alert_directory: "data/monitoring/alerts"

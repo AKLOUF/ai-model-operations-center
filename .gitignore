@@ -60,3 +60,32 @@ Thumbs.db
 # Generated dataset validation reports
 reports/data_validation/*.json
 !reports/data_validation/.gitkeep
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+
+# Generated datasets
+data/raw/*.csv
+data/processed/*
+data/monitoring/*.jsonl
+data/monitoring/alerts/*.json
+
+# Generated production artifacts
+models/production/*.joblib
+models/production/*.json
+
+# Generated reports
+reports/drift/*.json
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/monitoring/.gitkeep
+!data/monitoring/alerts/.gitk*ep
+!models/production/.gitkeep
+!re*orts/drift/.gitkeep
+# Python cache
+__pycache__/
+*.py[cod]

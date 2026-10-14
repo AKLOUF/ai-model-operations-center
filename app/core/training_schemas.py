@@ -19,9 +19,6 @@ ImputationStrategy = Literal[
 class DataSplitConfig(BaseModel):
     """
     Configuration de la séparation du dataset.
-
-    Les trois proportions représentent la part du dataset
-    complet attribuée à chaque sous-ensemble.
     """
 
     model_config = ConfigDict(
@@ -87,13 +84,16 @@ class PreprocessingConfig(BaseModel):
         frozen=True,
     )
 
-    imputation_strategy: ImputationStrategy = "median"
+    imputation_strategy: ImputationStrategy = (
+        "median"
+    )
+
     scale_features: bool = True
 
 
 class TrainingOutputConfig(BaseModel):
     """
-    Dossiers produits par le pipeline de préparation.
+    Configuration des dossiers de sortie.
     """
 
     model_config = ConfigDict(
@@ -108,7 +108,7 @@ class TrainingOutputConfig(BaseModel):
 
 class TrainingConfig(BaseModel):
     """
-    Configuration complète du pipeline de préparation ML.
+    Configuration complète du pipeline.
     """
 
     model_config = ConfigDict(
@@ -117,6 +117,7 @@ class TrainingConfig(BaseModel):
     )
 
     dataset_path: Path
+
     target_column: str = Field(
         min_length=1,
     )
@@ -128,7 +129,7 @@ class TrainingConfig(BaseModel):
 
 class DatasetSplitSummary(BaseModel):
     """
-    Résumé d'un sous-ensemble train, validation ou test.
+    Résumé d'un ensemble train, validation ou test.
     """
 
     model_config = ConfigDict(
@@ -148,7 +149,7 @@ class DatasetSplitSummary(BaseModel):
 
 class DataPreparationReport(BaseModel):
     """
-    Rapport produit après la préparation des données.
+    Rapport final de préparation des données.
     """
 
     model_config = ConfigDict(
@@ -159,7 +160,6 @@ class DataPreparationReport(BaseModel):
     target_column: str
     random_seed: int
     stratified: bool
-
     feature_names: list[str]
 
     train: DatasetSplitSummary
